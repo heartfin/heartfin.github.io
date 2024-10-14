@@ -1,37 +1,29 @@
-## Welcome to GitHub Pages
+---
+title: "Heartfin"
+description: "Jellyfin clients using Qt"
+layout: default
+---
+Heartfin is a group of—currently 1—clients for [Jellyfin](https://jellyfin.org/), a free media server for your own media.
+With these clients, you can stream images, music and videos from your server and play them back on your own devices!
 
-You can use the [editor on GitHub](https://github.com/heartfin/heartfin.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+## Sailfin
+![An stylished fish](/assets/sailfin/icon.svg){: width="10%" style="float:left;margin:0.25em;"} Sailfin is the Jellyfin client for [Sailfish OS](https://www.sailfishos.org/).
+You can download it from [OpenRepos](https://openrepos.net/content/ahappyhuman/sailfin). 
+There is [a Jellyfin thread on the Sailfish OS forum](https://forum.sailfishos.org/t/sailfin-a-jellyfin-client-for-sailfish-os-thread/2260?u=ahappyhuman) for any feedback and suggestions.
+Bugs and pull request can be submitted on [GitHub](https://github.com/heartfin/harbour-sailfin).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## libjellyfinqt
+is the library that powers Sailfin and in the future other clients under the heartfin umbrella.
+Written in C++ and makes use of the [Qt](https://www.qt.io) framework.
+If you're interested in contributing to the library or any Heartfin project, please [look at its documentation](https://heartfin.github.io/harbour-sailfin).
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/heartfin/heartfin.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## Updates
+{% for post in site.posts %}
+<article>
+    <header>
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        {{ post.date | date_to_long_string: "ordinal" }}
+    </header>
+    {{ post.excerpt }}
+</article>
+{% endfor %}
